@@ -29,7 +29,7 @@ export default function middleware(request: NextRequest) {
       pathname.startsWith('/_next/') ||
       pathname.startsWith('/photos/')
     ) {
-      return;
+      return NextResponse.next();
     }
 
     // Check if pathname already has a valid locale
@@ -37,7 +37,9 @@ export default function middleware(request: NextRequest) {
       (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
     );
 
-    if (pathnameHasLocale) return;
+    if (pathnameHasLocale) {
+      return NextResponse.next();
+    }
 
     // Redirect to language sub-path
     const locale = getLocale(request);
