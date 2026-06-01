@@ -14,6 +14,17 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
+export async function generateStaticParams() {
+  const photos = getAllPhotos();
+  const locales = ["fr", "en"];
+  return locales.flatMap((lang) =>
+    photos.map((photo) => ({
+      lang,
+      slug: photo.slug,
+    }))
+  );
+}
+
 
 export async function generateMetadata({
   params,

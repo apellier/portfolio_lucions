@@ -30,6 +30,10 @@ export const viewport: Viewport = {
 };
 
 
+export async function generateStaticParams() {
+  return [{ lang: "fr" }, { lang: "en" }];
+}
+
 interface LayoutProps {
   children: React.ReactNode;
   params: Promise<{ lang: string }>;

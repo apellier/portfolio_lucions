@@ -13,6 +13,17 @@ interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
 }
 
+export async function generateStaticParams() {
+  const experiences = getAllExperiences();
+  const locales = ["fr", "en"];
+  return locales.flatMap((lang) =>
+    experiences.map((exp) => ({
+      lang,
+      slug: exp.slug,
+    }))
+  );
+}
+
 
 export async function generateMetadata({
   params,
