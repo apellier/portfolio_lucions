@@ -19,24 +19,36 @@ function getLocale(request: NextRequest) {
 }
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  try {
+    const { pathname } = request.nextUrl;
 
-  // Check if pathname already has a valid locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
+    // Check if pathname already has a valid locale
+    const pathnameHasLocale = locales.some(
+      (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    );
 
-  if (pathnameHasLocale) return;
+    if (pathnameHasLocale) return;
 
-  // Redirect to language sub-path
-  const locale = getLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+    // Redirect to language sub-path
+    const locale = getLocale(request);
+    const redirectPath = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;
+    
+    const url = request.nextUrl.clone();
+    url.pathname = redirectPath;
+    
+    return NextResponse.redirect(url);
+  } catch (error) {
+    console.error("Proxy routing error:", error);
+    // Fallback redirect to default locale
+    const fallbackUrl = request.nextUrl.clone();
+    fallbackUrl.pathname = '/fr';
+    return NextResponse.redirect(fallbackUrl);
+  }
 }
 
 export const config = {
   matcher: [
-    // Skip internal paths, static assets and media files
-    '/((?!api|_next/static|_next/image|favicon.ico|photos|file.svg|globe.svg|next.svg|window.svg|vercel.svg|Minute.*|Capture.*|.*\\.jpg|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.mov).*)',
+    // Skip internal paths, static assets and media files (any path containing a dot ".")
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
   ],
 };
