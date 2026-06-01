@@ -43,15 +43,12 @@ export function proxy(request: NextRequest) {
     const locale = getLocale(request);
     const redirectPath = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;
     
-    const url = request.nextUrl.clone();
-    url.pathname = redirectPath;
-    
-    return NextResponse.redirect(url);
+    const redirectUrl = new URL(redirectPath, request.url);
+    return NextResponse.redirect(redirectUrl);
   } catch (error) {
     console.error("Proxy routing error:", error);
-    // Fallback redirect to default locale
-    const fallbackUrl = request.nextUrl.clone();
-    fallbackUrl.pathname = '/fr';
+    // Fallback redirect to default locale using standard URL constructor
+    const fallbackUrl = new URL('/fr', request.url);
     return NextResponse.redirect(fallbackUrl);
   }
 }
