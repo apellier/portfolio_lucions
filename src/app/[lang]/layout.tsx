@@ -29,9 +29,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export async function generateStaticParams() {
-  return [{ lang: "fr" }, { lang: "en" }];
-}
 
 interface LayoutProps {
   children: React.ReactNode;
