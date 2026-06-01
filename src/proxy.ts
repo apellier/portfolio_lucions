@@ -56,8 +56,5 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Run proxy on all paths except Next.js static internals and standard favicon
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
