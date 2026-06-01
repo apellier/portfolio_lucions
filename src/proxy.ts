@@ -22,6 +22,16 @@ export function proxy(request: NextRequest) {
   try {
     const { pathname } = request.nextUrl;
 
+    // Ignore static files, assets, and APIs programmatically
+    if (
+      pathname.includes('.') ||
+      pathname.startsWith('/api/') ||
+      pathname.startsWith('/_next/') ||
+      pathname.startsWith('/photos/')
+    ) {
+      return;
+    }
+
     // Check if pathname already has a valid locale
     const pathnameHasLocale = locales.some(
       (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -48,7 +58,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip internal paths, static assets and media files (any path containing a dot ".")
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
+    // Run proxy on all paths except Next.js static internals and standard favicon
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
