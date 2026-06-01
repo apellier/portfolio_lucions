@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "gallery": "Galerie",
+    "about": "À propos",
+    "audiovisuel": "Audiovisuel"
+  },
+  "home": {
+    "title": "Lucions",
+    "subtitle": "Un regard posé sur le monde",
+    "selectedWorks": "Œuvres Sélectionnées",
+    "exploreTitle": "Explorer la Collection",
+    "exploreText": "Des contrastes saisissants du noir et blanc aux éclats vibrants de la couleur — découvrez le portfolio complet.",
+    "exploreButton": "Voir la Galerie"
+  },
+  "gallery": {
+    "metaTitle": "Galerie",
+    "metaDescription": "Parcourez la collection complète de photographies de Lucions — filtrez par tags, explorez le travail en noir & blanc et en couleur.",
+    "title": "Galerie",
+    "subtitle": "Une collection soignée d'instants, de textures et de lumière.",
+    "filterAll": "Tout",
+    "backToGallery": "Retour à la Galerie",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "tags": "Mots-clés"
+  },
+  "about": {
+    "metaTitle": "À propos",
+    "metaDescription": "Découvrez Lucions — le photographe derrière l'objectif, sa démarche et sa vision.",
+    "title": "À propos",
+    "visionTitle": "La Vision",
+    "visionText1": "Lucions est un projet photographique personnel — une collection soignée d'images capturées au fil des années. Des compositions en noir et blanc épurées aux travaux en couleur vibrants et énergiques, ce portfolio représente une exploration continue de la lumière, des textures et des instants fugaces qui rendent le quotidien extraordinaire.",
+    "visionText2": "Chaque photographie ici est un reflet de curiosité — une tentative de trouver la beauté dans le banal, la tension dans le calme et des histoires dans les espaces intermédiaires.",
+    "getInTouchTitle": "Entrer en contact",
+    "getInTouchText": "Intéressé par des tirages, des collaborations, ou simplement envie de dire bonjour ? N'hésitez pas à me contacter."
+  },
+  "audiovisuel": {
+    "metaTitle": "Audiovisuel",
+    "metaDescription": "Découvrez les expériences audiovisuelles de Lucions — tournages, cadre, lumières et réalisations.",
+    "title": "Audiovisuel",
+    "subtitle": "Une immersion dans les tournages, la lumière et la composition d'images.",
+    "roleLabel": "Rôle",
+    "dateLabel": "Date & Lieu",
+    "descriptionLabel": "Description",
+    "galleryLabel": "Galerie du projet",
+    "videoPlaceholder": "La vidéo de ce projet est volumineuse et a été remplacée par un aperçu interactif.",
+    "backToAudiovisuel": "Retour à l'Audiovisuel",
+    "playVideo": "Lire la vidéo",
+    "closeVideo": "Fermer la vidéo"
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
+}

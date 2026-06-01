@@ -1,0 +1,101 @@
+/* ============================================
+   FeaturedStrip — Horizontal scroll gallery
+   ============================================ */
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+  padding-inline: var(--gutter);
+  margin-bottom: var(--space-xl);
+}
+
+/* ---------- Scroll container ---------- */
+.strip {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline-start: var(--gutter);
+  padding-inline-end: var(--gutter);
+  padding-block: var(--space-sm);
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Card ---------- */
+.card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-surface);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 400px;
+  }
+}
+
+/* ---------- Card image ---------- */
+.cardImage {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.03);
+}
+
+/* ---------- Card overlay ---------- */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.15) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  padding: var(--space-lg);
+  z-index: var(--z-base);
+}
+
+.card:hover .cardOverlay,
+.card:focus-visible .cardOverlay {
+  opacity: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}

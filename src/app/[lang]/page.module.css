@@ -1,0 +1,61 @@
+.featuredSection {
+  position: relative;
+}
+
+/* ---------- CTA Section ---------- */
+.ctaSection {
+  padding: var(--space-5xl) var(--gutter);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.ctaText {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-2xl);
+  margin-inline: auto;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 24px rgba(200, 168, 124, 0.3);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,28 @@
+.main {
+  padding-top: var(--header-height);
+}
+
+.hero {
+  padding: var(--space-4xl) var(--gutter) var(--space-2xl);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 50ch;
+}
+
+.gridSection {
+  padding: 0 var(--gutter) var(--space-4xl);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}

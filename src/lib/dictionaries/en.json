@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "gallery": "Gallery",
+    "about": "About",
+    "audiovisuel": "Audiovisuel"
+  },
+  "home": {
+    "title": "Lucions",
+    "subtitle": "A curated eye on the world",
+    "selectedWorks": "Selected Works",
+    "exploreTitle": "Explore the Collection",
+    "exploreText": "From stark black & white contrasts to vibrant bursts of color — discover the full portfolio.",
+    "exploreButton": "View Gallery"
+  },
+  "gallery": {
+    "metaTitle": "Gallery",
+    "metaDescription": "Browse the full Lucions photography collection — filter by tags, explore black & white and color work.",
+    "title": "Gallery",
+    "subtitle": "A curated collection of moments, textures, and light.",
+    "filterAll": "All",
+    "backToGallery": "Back to Gallery",
+    "previous": "Previous",
+    "next": "Next",
+    "tags": "Tags"
+  },
+  "about": {
+    "metaTitle": "About",
+    "metaDescription": "Learn about Lucions — the photographer behind the lens, the process, and the vision.",
+    "title": "About",
+    "visionTitle": "The Vision",
+    "visionText1": "Lucions is a personal photography project — a curated collection of images captured over the years. From stark black & white compositions to vibrant, high-energy color work, this portfolio represents a continuous exploration of light, texture, and the fleeting moments that make the everyday extraordinary.",
+    "visionText2": "Every photograph here is a reflection of curiosity — an attempt to find beauty in the mundane, tension in the quiet, and stories in the spaces between.",
+    "getInTouchTitle": "Get in Touch",
+    "getInTouchText": "Interested in prints, collaborations, or just want to say hello? Feel free to reach out."
+  },
+  "audiovisuel": {
+    "metaTitle": "Audiovisuel",
+    "metaDescription": "Discover audiovisual experiences by Lucions — tournages, cadre, lumières and work.",
+    "title": "Audiovisuel",
+    "subtitle": "A deep dive into film shoots, lighting design, and camera operating.",
+    "roleLabel": "Role",
+    "dateLabel": "Date & Location",
+    "descriptionLabel": "Description",
+    "galleryLabel": "Project Gallery",
+    "videoPlaceholder": "The video for this project is heavy and has been replaced by an interactive preview.",
+    "backToAudiovisuel": "Back to Audiovisuel",
+    "playVideo": "Play video",
+    "closeVideo": "Close video"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
